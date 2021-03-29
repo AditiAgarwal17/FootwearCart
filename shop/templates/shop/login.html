@@ -1,0 +1,21 @@
+{% extends 'shop/basic.html' %} 
+{% block title%}Login{% endblock %}
+
+{% block body %}
+<br>
+    <form action="/shop/login/" method="post" style="padding-left: 10px;">
+        {% csrf_token %} 
+        <label> Username: </label><br>
+        <input type="text" name="username" placeholder ="username"><br><br>
+        <label> Password: </label><br>
+        <input type="password" name="password" placeholder ="password"><br>
+        <br>
+        <input type="submit" name="Register">
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+    
+    {% endblock %}

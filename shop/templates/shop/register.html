@@ -1,0 +1,29 @@
+{% extends 'shop/basic.html' %} 
+{% block title%}Register{% endblock %}
+
+{% block body %}<br> 
+<form action="/shop/register/" method="post" style="padding-left: 10px;">  
+      {% csrf_token %}
+    <label> Firstname </label>         
+    <input type="text" name="first_name" size="15"/> <br> <br>  
+    
+    <label> Middlename: </label>     
+    <input type="text" name="last_name" size="15"/> <br> <br>  
+    <label> Username: </label>     
+    <input type="text" name="username" size="15"/> <br> <br>
+
+    
+    <label> email: </label>         
+    <input type="email" name="email" size="15"/> <br> <br>
+    <label> Password: </label>         
+    <input type="password" name="password1" size="15"/> <br> <br>
+    <label>Confirm Password: </label>         
+    <input type="password" name="password2" size="15"/> <br> <br>  
+      
+    <input type="submit" name="Register">
+    </form>  
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        {% endblock %}
